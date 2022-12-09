@@ -1,2 +1,2 @@
 cc binsearch.c
-./a.out
+./a.out < testcase.txt

@@ -19,17 +19,17 @@ int binsearch(int x, int v[], int n) {
 
 int main() {
   int n;
-  printf("Please input the array size: ");
+  printf("Please input the array size: \n");
   scanf("%d", &n);
 
   int v[n];
-  printf("Please input %d sorted ascending numbers: ", n);
+  printf("Please input %d sorted ascending numbers: \n", n);
   for (int i = 0; i < n; ++i) {
     scanf("%d", &v[i]);
   }
 
   int x;
-  printf("Please input the number you want to search: ");
+  printf("Please input the number you want to search: \n");
   scanf("%d", &x);
   int index = binsearch(x, v, n);
   if (index == -1) {
