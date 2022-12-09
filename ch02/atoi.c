@@ -11,7 +11,7 @@ int my_atoi(char s[]) {
 
 int main() {
   int size = 1024;
-  char* buff = (char*) malloc(size);
+  char* buff = (char*)malloc(size);
 
   printf("Please input the number: ");
   gets(buff);
