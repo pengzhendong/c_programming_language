@@ -10,7 +10,7 @@ void arr_pcm_to_ptr_float(const char* data, int data_size, float* float_data,
   const int16_t* tmp = reinterpret_cast<const int16_t*>(data);
   *float_data_size = data_size / sizeof(int16_t);
   for (int i = 0; i < *float_data_size; i++) {
-    float_data[i] = tmp[i] / 32767.0;
+    float_data[i] = static_cast<float>(tmp[i]);
   }
 }
 
@@ -19,7 +19,7 @@ void vec_pcm_to_ptr_float(const std::vector<char> data, float* float_data,
   const int16_t* tmp = reinterpret_cast<const int16_t*>(data.data());
   *float_data_size = data.size() / sizeof(int16_t);
   for (int i = 0; i < *float_data_size; i++) {
-    float_data[i] = tmp[i] / 32767.0;
+    float_data[i] = static_cast<float>(tmp[i]);
   }
 }
 
@@ -27,7 +27,7 @@ void vec_pcm_to_vec_float(const std::vector<char> data,
                           std::vector<float>* vec_float) {
   const int16_t* tmp = reinterpret_cast<const int16_t*>(data.data());
   for (int i = 0; i < data.size() / sizeof(int16_t); i++) {
-    vec_float->emplace_back(tmp[i] / 32767.0);
+    vec_float->emplace_back(static_cast<float>(tmp[i]));
   }
 }
 
